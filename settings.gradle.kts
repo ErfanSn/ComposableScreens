@@ -44,3 +44,4 @@ dependencyResolutionManagement {
 rootProject.name = "Composable Screens"
 include(":app")
 include(":travel")
+include(":music")
