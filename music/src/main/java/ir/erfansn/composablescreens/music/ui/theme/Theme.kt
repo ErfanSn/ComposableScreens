@@ -1,4 +1,4 @@
-package ir.erfansn.composablescreens.music.ui
+package ir.erfansn.composablescreens.music.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -6,9 +6,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
-val DarkColorScheme = darkColorScheme()
+internal val DarkColorScheme = darkColorScheme()
 
-val LightColorScheme = lightColorScheme()
+internal val LightColorScheme = lightColorScheme()
 
 @Composable
 internal fun MusicTheme(
