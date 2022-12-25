@@ -17,27 +17,32 @@ dependencyResolutionManagement {
             version("compileSdk", "33")
             version("minSdk", "21")
             version("targetSdk", "33")
-            version("agp", "7.3.0")
-            version("compose-compiler", "1.3.1")
-            version("compose", "1.3.0-beta02")
 
-            library("androidx-compose-ui", "androidx.compose.ui", "ui").versionRef("compose")
-            library("androidx-compose-material", "androidx.compose.material", "material").versionRef("compose")
-            library("androidx-compose-material3", "androidx.compose.material3", "material3").version("1.0.0-beta02")
-            library("androidx-compose-material-icons", "androidx.compose.material", "material-icons-extended").versionRef("compose")
-            library("androidx-compose-ui-tooling-preview", "androidx.compose.ui", "ui-tooling-preview").versionRef("compose")
-            val composeLibraries = listOf("androidx-compose-ui", "androidx-compose-material-icons", "androidx-compose-ui-tooling-preview")
+            version("kotlin", "1.7.21")
+            version("agp", "7.3.1")
+            version("compose-compiler", "1.4.0-alpha02")
+            version("compose-bom", "2022.12.00")
+
+            library("androidx.compose-bom", "androidx.compose", "compose-bom").versionRef("compose-bom")
+            library("androidx-compose-material", "androidx.compose.material", "material").withoutVersion()
+            library("androidx-compose-material3", "androidx.compose.material3", "material3").withoutVersion()
+            library("androidx-compose-material-iconsExtended", "androidx.compose.material", "material-icons-extended").withoutVersion()
+            library("androidx-compose-material3-windowSizeClass", "androidx.compose.material3", "material3-window-size-class").withoutVersion()
+            val composeLibraries = listOf(
+                "androidx-compose-material-iconsExtended",
+                "androidx-compose-material3-windowSizeClass",
+            )
             bundle("compose", composeLibraries + "androidx-compose-material")
-            bundle("compose-m3", composeLibraries + "androidx-compose-material3")
+            bundle("composeM3", composeLibraries + "androidx-compose-material3")
 
-            library("androidx-compose-ui-tooling", "androidx.compose.ui", "ui-tooling").versionRef("compose")
-            library("androidx-compose.ui-test-manifest", "androidx.compose.ui", "ui-test-manifest").versionRef("compose")
-            bundle("compose-debug", listOf("androidx-compose-ui-tooling", "androidx-compose.ui-test-manifest"))
+            library("androidx-compose-uiTooling-preview", "androidx.compose.ui", "ui-tooling-preview").withoutVersion()
+            library("androidx-compose-uiTooling", "androidx.compose.ui", "ui-tooling").withoutVersion()
 
-            library("androidx-activity-compose", "androidx.activity:activity-compose:1.5.1")
-            library("androidx-core", "androidx.core:core-ktx:1.8.0")
-            library("androidx-constraintlayout-compose", "androidx.constraintlayout:constraintlayout-compose:1.0.1")
-            library("androidx-navigation-compose", "androidx.navigation:navigation-compose:2.5.2")
+            library("androidx-core", "androidx.core:core-ktx:1.9.0")
+
+            library("androidx-activityCompose", "androidx.activity:activity-compose:1.6.1")
+            library("androidx-constraintlayoutCompose", "androidx.constraintlayout:constraintlayout-compose:1.0.1")
+            library("androidx-navigationCompose", "androidx.navigation:navigation-compose:2.5.3")
         }
     }
 }

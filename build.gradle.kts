@@ -8,9 +8,10 @@ extra["packageName"] = "ir.erfansn.composablescreens"
 )
 plugins {
     val agpVersion = libs.versions.agp.get()
+    val kotlinVersion = libs.versions.kotlin.get()
     id("com.android.application") version agpVersion apply false
     id("com.android.library") version agpVersion apply false
-    kotlin("android") version "1.7.10" apply false
+    kotlin("android") version kotlinVersion apply false
 }
 
 tasks.register<Delete>("clean") {

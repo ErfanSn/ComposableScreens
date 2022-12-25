@@ -43,10 +43,13 @@ android {
 
 dependencies {
     implementation(libs.androidx.core)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.constraintlayout.compose)
-    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.activityCompose)
+    implementation(libs.androidx.constraintlayoutCompose)
+    implementation(libs.androidx.navigationCompose)
 
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.bundles.compose)
-    debugImplementation(libs.bundles.compose.debug)
+
+    implementation(libs.androidx.compose.uiTooling.preview)
+    debugImplementation(libs.androidx.compose.uiTooling.asProvider())
 }
