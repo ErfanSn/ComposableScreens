@@ -47,6 +47,7 @@ android {
 
 dependencies {
     implementation(project(":travel"))
+    implementation(project(":music"))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.activityCompose)
